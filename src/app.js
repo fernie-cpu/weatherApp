@@ -1,6 +1,7 @@
 const name = document.querySelector('.name');
 const temperature = document.querySelector('.temp');
 const main = document.querySelector('.main');
+const icon = document.querySelector('.icon');
 const desc = document.querySelector('.desc');
 const feel = document.querySelector('.feel');
 const minTemp = document.querySelector('.min');
@@ -37,11 +38,16 @@ const displayWeather = async (data) => {
   name.textContent = data.name;
   temperature.textContent = parseInt(data.main.temp) + '°';
   main.textContent = data.weather[0].main;
+  icon.src =
+    'http://openweathermap.org/img/wn/' + data.weather[0].icon + '@2x.png';
   desc.textContent = 'Description: ' + data.weather[0].description;
   feel.textContent = 'Feels like: ' + parseInt(data.main.feels_like) + '°';
   minTemp.textContent = 'Min: ' + parseInt(data.main.temp_min) + '°';
   maxTemp.textContent = 'Max: ' + parseInt(data.main.temp_max) + '°';
   humidity.textContent = 'Humidity: ' + data.main.humidity + '%';
+  document.body.style.backgroundImage =
+    'url("https://source.unsplash.com/1600x900/?' + data.name + '-city")';
+  console.log(data);
 };
 
 const toggleUnit = document.querySelector('.checkbox');
