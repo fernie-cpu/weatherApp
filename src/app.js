@@ -10,7 +10,7 @@ const humidity = document.querySelector('.humidity');
 const searchBtn = document.querySelector('.search-btn');
 const searchCity = document.querySelector('#search-city');
 
-let api = 'http://api.openweathermap.org/data/2.5/weather?q=';
+let api = 'https://api.openweathermap.org/data/2.5/weather?q=';
 const API_KEY = '&appid=78f46276c074c96c7cc3e739da828101';
 
 const getWeather = async () => {
