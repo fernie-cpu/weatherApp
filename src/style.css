@@ -10,7 +10,12 @@ body {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   color: white;
   background-image: url('https://source.unsplash.com/1600x900/?Detroit+city');
+  background-position-x: center;
+  background-position-y: center;
+  background-attachment: fixed;
   background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
   position: relative;
 }
 
