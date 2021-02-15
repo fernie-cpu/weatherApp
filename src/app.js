@@ -15,18 +15,21 @@ const API_KEY = '&appid=78f46276c074c96c7cc3e739da828101';
 
 const getWeather = async () => {
   const unit = document.querySelector('.checkbox').value;
+  try {
+    let searchTerm = searchCity.value;
+    if (!searchTerm) {
+      searchTerm = 'Detroit';
+    }
 
-  let searchTerm = searchCity.value;
-  if (!searchTerm) {
-    searchTerm = 'Detroit';
+    let units = `${unit}`;
+    let url = api + searchTerm + '&units=' + units + API_KEY;
+
+    const response = await fetch(url, { mode: 'cors' });
+    const data = await response.json();
+    displayWeather(data);
+  } catch (err) {
+    console.log(err);
   }
-
-  let units = `${unit}`;
-  let url = api + searchTerm + '&units=' + units + API_KEY;
-
-  const response = await fetch(url, { mode: 'cors' });
-  const data = await response.json();
-  displayWeather(data);
 };
 
 searchBtn.addEventListener('click', (e) => {
@@ -47,7 +50,6 @@ const displayWeather = async (data) => {
   humidity.textContent = 'Humidity: ' + data.main.humidity + '%';
   document.body.style.backgroundImage =
     'url("https://source.unsplash.com/1600x900/?' + data.name + '-city")';
-  console.log(data);
 };
 
 const toggleUnit = document.querySelector('.checkbox');

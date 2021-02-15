@@ -4,36 +4,37 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <script src="https://kit.fontawesome.com/a7d8945663.js" crossorigin="anonymous"></script>
+    <title>Weather App</title>
   </head>
   <body>
     <header class="title">
       <h1>Weather App</h1>
     </header>
     <form class="search">
-      <input type="text" name="search-city" id="search-city" />
-      <button class="search-btn">Search</button>
+      <input type="text" name="search-city" class="search-input" id="search-city" placeholder="Enter a city..."/>
+      <button class="search-btn"><i class="fas fa-search"></i></button>
     </form>
 
     <div class="container">
       <div class="box">
-        <img src="" alt="" class="icon"></img>
         <span class="main"></span>
         <span class="name"></span>
         <span class="temp"></span>
+        <img src="" alt="" class="icon"></img>
         <span class="desc"></span>
         <span class="feel"></span>
         <span class="min"></span>
         <span class="max"></span>
         <span class="humidity"></span>
-      </div>
-      <div class="toggle">
-        <input type="checkbox" name="toggle" class="checkbox" id="checkbox" />
-        <label for="checkbox" class="label">
-          <div class="ball"></div>
-          <p>C</p>
-          <p>F</p>
-        </label>
+        <div class="toggle">
+          <input type="checkbox" name="toggle" class="checkbox" id="checkbox" />
+          <label for="checkbox" class="label">
+            <div class="ball"></div>
+            <p>C</p>
+            <p>F</p>
+          </label>
+        </div>
       </div>
     </div>
     <script src="main.js"></script>
